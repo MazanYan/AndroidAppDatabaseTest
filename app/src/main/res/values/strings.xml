@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">DatabaseTest</string>
+    <string name="app_name">Тест</string>
+    <string name="loginLabel">Логін</string>
+    <string name="passwordLabel">Пароль</string>
+    <string name="inputLoginData">Увійти</string>
+    <string name="register">Зареєструватися</string>
 </resources>
