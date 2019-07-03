@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+    <TextView
+            android:text="@string/new_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" tools:layout_editor_absoluteY="110dp"
+            tools:layout_editor_absoluteX="74dp"
+            android:id="@+id/input_login" android:textSize="30sp"
+            android:textAlignment="center"/>
+    <EditText
+            android:inputType="text"
+            android:layout_width="255dp"/>
+    <TextView
+            android:text="@string/new_password"
+            android:layout_width="525dp"
+            android:layout_height="wrap_content" tools:layout_editor_absoluteY="110dp"
+            tools:layout_editor_absoluteX="74dp"
+            android:id="@+id/input_password"
+            android:textSize="30sp"
+            android:textAlignment="center"/>
+    <EditText
+            android:inputType="text"
+            android:layout_width="436dp"/>
+    <TextView
+            android:text="@string/new_name"
+            android:layout_width="525dp"
+            android:layout_height="wrap_content" tools:layout_editor_absoluteY="110dp"
+            tools:layout_editor_absoluteX="74dp"
+            android:id="@+id/input_name"
+            android:textSize="30sp"
+            android:textAlignment="center"/>
+    <EditText
+            android:inputType="text"
+            android:layout_width="436dp"/>
+    <TextView
+            android:text="@string/new_group"
+            android:layout_width="525dp"
+            android:layout_height="wrap_content" tools:layout_editor_absoluteY="110dp"
+            tools:layout_editor_absoluteX="74dp"
+            android:id="@+id/input_group"
+            android:textSize="30sp"
+            android:textAlignment="center"/>
+    <EditText
+            android:inputType="text"
+            android:layout_width="436dp"/>
+    <Button
+            android:text="@string/register"
+            android:textSize="24sp"/>
+</TableLayout>

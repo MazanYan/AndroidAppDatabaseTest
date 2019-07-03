@@ -7,7 +7,7 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
     <TextView
-            android:text="@string/loginLabel"
+            android:text="@string/login_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" tools:layout_editor_absoluteY="110dp"
             tools:layout_editor_absoluteX="74dp"
@@ -17,7 +17,7 @@
             android:inputType="text"
             android:layout_width="255dp"/>
     <TextView
-            android:text="@string/passwordLabel"
+            android:text="@string/password_label"
             android:layout_width="525dp"
             android:layout_height="wrap_content" tools:layout_editor_absoluteY="110dp"
             tools:layout_editor_absoluteX="74dp"
@@ -28,9 +28,9 @@
             android:inputType="text"
             android:layout_width="436dp"/>
     <Button
-            android:text="@string/inputLoginData"
+            android:text="@string/input_login_data"
             android:textSize="24sp"/>
     <Button
             android:text="@string/register"
-            android:textSize="24sp"/>
+            android:textSize="24sp" android:onClick="onRegisterClicked"/>
 </TableLayout>

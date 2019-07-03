@@ -3,6 +3,8 @@ package com.databasetest
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import com.databasetest.databaseClasses.PairLesson
+import com.databasetest.databaseClasses.Student
 
 class DBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VER) {
 
@@ -78,4 +80,20 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
     }
 
     // specific selects to be added
+    fun getUserByLogin(login : String) : Student {
+        return Student("","","","", "", "", "")
+    }
+
+    fun getUserByID(bookID : String) : Student {
+        return Student("","","","", "", "", "")
+    }
+
+    fun addUser(student : Student) : Boolean {
+        return true
+    }
+
+    fun getGroupSchedule(groupNumber : String) : Array<PairLesson> {
+        return arrayOf(PairLesson(0, "IV-71", 100, "NOVOTARSKYI", "AMC", 1, 2))
+    }
+
 }
