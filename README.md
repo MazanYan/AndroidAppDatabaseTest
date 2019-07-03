@@ -1,4 +1,5 @@
 # AndroidAppDatabaseTest
 Test working with SQLite.
 
-![Realisation of database with the given structure](doc/DatabaseStructure.png)
+![Database Structure](doc/DatabaseStructure.png)
+*Realisation of database with the given structure*
