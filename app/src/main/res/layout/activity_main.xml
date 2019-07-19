@@ -29,8 +29,18 @@
             android:layout_width="436dp"/>
     <Button
             android:text="@string/input_login_data"
-            android:textSize="24sp"/>
+            android:textSize="24sp"
+            android:layout_width="194dp"/>
     <Button
             android:text="@string/register"
-            android:textSize="24sp" android:onClick="onRegisterClicked"/>
+            android:textSize="24sp"
+            android:onClick="onRegisterClicked"
+            android:layout_width="164dp"/>
+    <Button
+            android:text="@string/for_admins"
+            android:textSize="24sp"
+            android:onClick="onAdminClicked"
+            android:layout_width="164dp"
+            android:layout_marginTop="280dp"
+            />
 </TableLayout>

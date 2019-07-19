@@ -33,7 +33,7 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
                 Password TEXT,
 
                 FOREIGN KEY(StudentGroup) REFERENCES StudentGroup(Number)
-            );""",
+            );"""/*,
 
             """CREATE TABLE Lecturer (
                 ID TEXT NOT NULL PRIMARY KEY,
@@ -68,7 +68,7 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
                 FOREIGN KEY(LectureHall) REFERENCES LectureHall(Number),
                 FOREIGN KEY(Lecturer) REFERENCES Lecturer(ID),
                 FOREIGN KEY(Subject) REFERENCES Subject(ID)
-            );"""
+            );"""*/
         )
         for (query: String in createTablesQueries) {
             db!!.execSQL(query)

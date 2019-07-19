@@ -5,11 +5,22 @@
     <string name="password_label">Пароль</string>
     <string name="input_login_data">Увійти</string>
     <string name="register">Зареєструватися</string>
-
+    <string name="for_admins">Для адміністратора</string>
     <!-- Strings related to register -->
     <string name="title_activity_sign_up">Реєстрація</string>
     <string name="new_login">Придумайте логін</string>
     <string name="new_password">Придумайте пароль</string>
     <string name="new_name">ПІБ</string>
     <string name="new_group">Ваша група</string>
+    <string name="title_activity_admin">AdminActivity</string>
+    <!-- Strings related to admin -->
+    <string name="create_group">Додати групу</string>
+    <string name="create_lecturer">Додати викладача</string>
+    <string name="create_lecture_hall">Додати аудиторію</string>
+    <string name="create_subject">Додати предмет</string>
+    <string name="create_schedule">Додати розклад для групи</string>
+    <!--Strings related to adding a new group-->
+    <string name="set_group_name_label">Ім\'я групи</string>
+    <string name="specialisation_label">Спеціалізація</string>
+    <string name="year_label">Курс</string>
 </resources>

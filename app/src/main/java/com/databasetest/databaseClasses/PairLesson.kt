@@ -1,6 +1,6 @@
 package com.databasetest.databaseClasses
 
-class PairLesson(val id: Int,
+data class PairLesson(val id: Int,
                  val group: String,
                  val lectureHall: Int,
                  val lecturer: String,

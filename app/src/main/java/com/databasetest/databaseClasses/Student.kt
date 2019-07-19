@@ -1,6 +1,6 @@
 package com.databasetest.databaseClasses
 
-class Student(val id: String,
+data class Student(val id: String,
               val firstName: String,
               val secondName: String,
               val fatherName: String,

@@ -4,15 +4,19 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
-import android.widget.Toast
+import android.widget.Button
 
-class SignUpActivity : AppCompatActivity() {
+import com.databasetest.dialogFragments.CreateGroupDialogFragment
+
+
+class AdminActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.sign_up_activity)
+        setContentView(R.layout.activity_admin)
         val actionBar = supportActionBar
-        actionBar?.setDisplayHomeAsUpEnabled(true)
+        actionBar!!.setDisplayHomeAsUpEnabled(true)
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
@@ -24,7 +28,11 @@ class SignUpActivity : AppCompatActivity() {
         return true
     }
 
-    fun testFun(v : View) {
-        Toast.makeText(baseContext, "ewytweywe", Toast.LENGTH_LONG).show()
+    fun onAddGroupClicked(v : View) {
+        val dialog = CreateGroupDialogFragment()
+        val fm = supportFragmentManager
+        dialog.show(fm, "test_tag")
     }
+
+
 }

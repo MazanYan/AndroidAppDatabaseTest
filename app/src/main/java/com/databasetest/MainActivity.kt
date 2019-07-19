@@ -21,4 +21,9 @@ class MainActivity : AppCompatActivity() {
     fun onLogInClicked(v: View) {
 
     }
+
+    fun onAdminClicked(v: View) {
+        val intent = Intent(this, AdminActivity::class.java)
+        startActivityForResult(intent, 1)
+    }
 }
