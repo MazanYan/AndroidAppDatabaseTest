@@ -1,10 +1,10 @@
-package com.databasetest
+package com.databasetest.Activities
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
-import android.widget.Button
+import com.databasetest.R
 
 import com.databasetest.dialogFragments.CreateGroupDialogFragment
 

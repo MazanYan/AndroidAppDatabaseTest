@@ -1,10 +1,11 @@
-package com.databasetest
+package com.databasetest.Activities
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
+import com.databasetest.R
 
 /**
  * Class of window which opens after pressing Sign up button in Main activity

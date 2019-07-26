@@ -14,12 +14,12 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity
-                android:name=".AdminActivity"
+                android:name=".Activities.AdminActivity"
                 android:label="@string/title_activity_admin"
                 android:parentActivityName=".MainActivity">
         </activity>
         <activity
-                android:name=".SignUpActivity"
+                android:name=".Activities.SignUpActivity"
                 android:label="@string/title_activity_sign_up"
                 android:parentActivityName=".MainActivity">
         </activity>
