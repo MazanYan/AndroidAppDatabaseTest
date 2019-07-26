@@ -16,11 +16,12 @@
         <activity
                 android:name=".AdminActivity"
                 android:label="@string/title_activity_admin"
-                android:theme="@style/AppTheme.NoActionBar">
+                android:parentActivityName=".MainActivity">
         </activity>
         <activity
                 android:name=".SignUpActivity"
-                android:label="@string/title_activity_sign_up">
+                android:label="@string/title_activity_sign_up"
+                android:parentActivityName=".MainActivity">
         </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
