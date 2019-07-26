@@ -6,6 +6,9 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 
+/**
+ * Class of window which opens after pressing Sign up button in Main activity
+ */
 class SignUpActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

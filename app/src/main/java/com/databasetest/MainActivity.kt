@@ -4,6 +4,8 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
+import com.databasetest.databaseClasses.Subject
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,6 +26,6 @@ class MainActivity : AppCompatActivity() {
 
     fun onAdminClicked(v: View) {
         val intent = Intent(this, AdminActivity::class.java)
-        startActivityForResult(intent, 1)
+        startActivityForResult(intent, 0)
     }
 }

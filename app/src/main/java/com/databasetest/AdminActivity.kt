@@ -8,7 +8,9 @@ import android.widget.Button
 
 import com.databasetest.dialogFragments.CreateGroupDialogFragment
 
-
+/**
+ * Activity that is invoked after pressing button "For admin" in the Main activity
+ */
 class AdminActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
