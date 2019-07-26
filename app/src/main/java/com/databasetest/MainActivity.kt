@@ -4,8 +4,9 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
-import com.databasetest.databaseClasses.Subject
+import com.databasetest.Activities.AdminActivity
+import com.databasetest.Activities.SignUpActivity
+
 
 class MainActivity : AppCompatActivity() {
 

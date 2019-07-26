@@ -12,8 +12,8 @@
     <string name="new_password">Придумайте пароль</string>
     <string name="new_name">ПІБ</string>
     <string name="new_group">Ваша група</string>
-    <string name="title_activity_admin">AdminActivity</string>
     <!-- Strings related to admin -->
+    <string name="title_activity_admin">Адміністратор</string>
     <string name="create_group">Додати групу</string>
     <string name="create_lecturer">Додати викладача</string>
     <string name="create_lecture_hall">Додати аудиторію</string>
