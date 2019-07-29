@@ -19,12 +19,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val myDatabaseHandler = DBHelper(this)
         myDatabaseHandler.clearTables()
-//        val testGroup = StudentGroup("ІВ-71", 2019, "ErA")
-//        val testGroup2 = StudentGroup("ІВ-72", 2019, "ErA")
-//        myDatabaseHandler.addGroup(testGroup)
-//        myDatabaseHandler.addGroup(testGroup2)
-//
-//        val studentGroupsArray = myDatabaseHandler.getAllStudentGroups()
     }
 
 
