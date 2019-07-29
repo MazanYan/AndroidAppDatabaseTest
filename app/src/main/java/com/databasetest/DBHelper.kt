@@ -1,10 +1,13 @@
 package com.databasetest
 
+import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import android.util.Log
 import com.databasetest.databaseClasses.PairLesson
 import com.databasetest.databaseClasses.Student
+import com.databasetest.databaseClasses.StudentGroup
 
 class DBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VER) {
 
@@ -13,11 +16,10 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
         val DATABASE_VER: Int = 1
     }
 
-
     override fun onCreate(db: SQLiteDatabase?) {
         val createTablesQueries: ArrayList<String> = arrayListOf(
             """CREATE TABLE StudentGroup (
-                Number TEXT NOT NULL PRIMARY KEY,
+                Number INTEGER NOT NULL PRIMARY KEY, -- Hidden from user code of our studentGroup in the table --
                 NumberCyr TEXT,     -- Cyrillic name of a group --
                 Year INTEGER,
                 Specialization TEXT
@@ -28,7 +30,7 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
                 FirstName TEXT,
                 SecondName TEXT,
                 FatherName TEXT,
-                StudentGroup TEXT,
+                StudentGroup INTEGER,
                 Login TEXT,
                 Password TEXT,
 
@@ -92,8 +94,62 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
         return true
     }
 
+    // INSERT INTO StudentGroup VALUES (Number, NumberCyr, Year, Specialization);
+    fun addGroup(group : StudentGroup) : Boolean {
+        val values = ContentValues()
+        values.put("Number", group.name.hashCode())
+        values.put("NumberCyr", group.name)
+        values.put("Year", group.year)
+        values.put("Specialization", group.specialization)
+
+        val db = this.writableDatabase
+
+        db.insert("StudentGroup", null, values)
+        db.close()
+        return true
+    }
+
+    // SELECT * FROM StudentGroup
+    fun getAllStudentGroups() : ArrayList<StudentGroup> {
+        val myQuery = "SELECT * FROM StudentGroup;"
+        val db = this.writableDatabase
+
+        val sqlSelection = db.rawQuery(myQuery, null)
+        val studentGroupsArray: ArrayList<StudentGroup> = ArrayList()
+        if (sqlSelection.moveToFirst()) {
+            do {
+                val name = sqlSelection.getString(sqlSelection.getColumnIndex("NumberCyr"))
+                val year = sqlSelection.getInt(sqlSelection.getColumnIndex("Year"))
+                val specialization = sqlSelection.getString(sqlSelection.getColumnIndex("Specialization"))
+                studentGroupsArray.add(StudentGroup(name, year, specialization))
+            } while (sqlSelection.moveToNext())
+        }
+        sqlSelection.close()
+        db.close()
+
+        return studentGroupsArray
+    }
+
+    // SELECT * FROM PairLesson WHERE StudentGroup=groupNumber
     fun getGroupSchedule(groupNumber : String) : Array<PairLesson> {
         return arrayOf(PairLesson(0, "IV-71", 100, "NOVOTARSKYI", "AMC", 1, 2))
     }
 
+    fun dropTables() : Boolean {
+        val myQuery = "DROP TABLE IF EXISTS StudentGroup;" +
+                      "DROP TABLE IF EXISTS Student;"
+
+        val db = this.writableDatabase
+
+        db.rawQuery(myQuery, null).close()
+        db.close()
+        return true
+    }
+
+    fun clearTables() : Boolean {
+        val db = this.writableDatabase
+        db.delete("StudentGroup", null, null)
+        db.delete("Student", null, null)
+        return true
+    }
 }
