@@ -26,12 +26,13 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
 
             """CREATE TABLE Student (
                 Login TEXT NOT NULL PRIMARY KEY,
+                StudentGroup INTEGER,
+                StudentGroupCyr TEXT,
+                Password TEXT,
                 FirstName TEXT,
                 SecondName TEXT,
                 FatherName TEXT,
-                StudentGroup INTEGER,
-                Password TEXT,
-
+                
                 FOREIGN KEY(StudentGroup) REFERENCES StudentGroup(Number)
             );"""/*,
 
@@ -81,18 +82,39 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
 
     // specific selects to be added
     fun getUserByLogin(login : String) : Student {
-        return Student("","","","", "", "", "")
+        return Student("","","","", "", "")
     }
 
     fun getUserByID(bookID : String) : Student {
-        return Student("","","","", "", "", "")
+        return Student("","","","", "", "")
     }
 
+    //INSERT INTO Student VALUES ?
     fun addUser(student : Student) : Boolean {
-        return true
+        val db = this.writableDatabase
+        var inserted = false
+        try {
+            val values = ContentValues()
+            values.put("Login", student.login)
+            values.put("StudentGroup", student.group.hashCode())
+            values.put("StudentGroupCyr", student.group)
+            values.put("Password", student.password)
+            values.put("FirstName", student.firstName)
+            values.put("SecondName", student.secondName)
+            values.put("FatherName", student.fatherName)
+
+            db.insert("Student", null, values)
+            inserted = true
+        } catch (e : Exception) {
+            inserted = false
+        } finally {
+            db.close()
+            return inserted
+        }
+
     }
 
-    // INSERT INTO StudentGroup VALUES (Number, NumberCyr, Year, Specialization);
+    // INSERT INTO StudentGroup VALUES ?;
     fun addGroup(group : StudentGroup) : Boolean {
         val values = ContentValues()
         values.put("Number", group.name.hashCode())
@@ -116,10 +138,35 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
         val studentGroupsArray: ArrayList<StudentGroup> = ArrayList()
         if (sqlSelection.moveToFirst()) {
             do {
-                val name = sqlSelection.getString(sqlSelection.getColumnIndex("NumberCyr"))
-                val year = sqlSelection.getInt(sqlSelection.getColumnIndex("Year"))
+                val name = sqlSelection.getString(sqlSelection.getColumnIndex("Login"))
+                val year = sqlSelection.getInt(sqlSelection.getColumnIndex("StudentGroup"))
                 val specialization = sqlSelection.getString(sqlSelection.getColumnIndex("Specialization"))
                 studentGroupsArray.add(StudentGroup(name, year, specialization))
+            } while (sqlSelection.moveToNext())
+        }
+        sqlSelection.close()
+        db.close()
+
+        return studentGroupsArray
+    }
+
+    // SELECT * FROM Student
+    fun getAllStudents() : ArrayList<Student> {
+        val myQuery = "SELECT * FROM Student;"
+        val db = this.writableDatabase
+
+        val sqlSelection = db.rawQuery(myQuery, null)
+        val studentGroupsArray: ArrayList<Student> = ArrayList()
+        if (sqlSelection.moveToFirst()) {
+            do {
+                val login = sqlSelection.getString(sqlSelection.getColumnIndex("Login"))
+                val group = sqlSelection.getString(sqlSelection.getColumnIndex("StudentGroupCyr"))
+                val password = sqlSelection.getString(sqlSelection.getColumnIndex("Password"))
+                val firstName = sqlSelection.getString(sqlSelection.getColumnIndex("FirstName"))
+                val secondName = sqlSelection.getString(sqlSelection.getColumnIndex("SecondName"))
+                val fatherName = sqlSelection.getString(sqlSelection.getColumnIndex("FatherName"))
+
+                studentGroupsArray.add(Student(login, group, password, firstName, secondName, fatherName))
             } while (sqlSelection.moveToNext())
         }
         sqlSelection.close()

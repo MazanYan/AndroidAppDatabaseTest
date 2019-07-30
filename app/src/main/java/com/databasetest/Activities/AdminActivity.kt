@@ -17,7 +17,7 @@ import android.view.LayoutInflater
  * Activity that is invoked after pressing button "For admin" in the Main activity
  */
 class AdminActivity : AppCompatActivity() {
-    private val myDatabaseHandler: DBHelper = DBHelper(this)
+    private val myDatabaseHelper: DBHelper = DBHelper(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,8 +25,8 @@ class AdminActivity : AppCompatActivity() {
         val actionBar = supportActionBar
         actionBar!!.setDisplayHomeAsUpEnabled(true)
 
-//        myDatabaseHandler.addGroup(StudentGroup("ІК-71", 2017, "цушщеьщцуешцуеп"))
-//        val groups = myDatabaseHandler.getAllStudentGroups()
+//        myDatabaseHelper.addGroup(StudentGroup("ІК-71", 2017, "цушщеьщцуешцуеп"))
+//        val groups = myDatabaseHelper.getAllStudentGroups()
 //        Toast.makeText(baseContext, groups.toString(), Toast.LENGTH_LONG).show()
     }
 
@@ -61,7 +61,7 @@ class AdminActivity : AppCompatActivity() {
                 val groupYear = groupYearField.text.toString().toInt()
                 val groupSpecialization = groupSpecializationField.text.toString()
 
-                myDatabaseHandler.addGroup(StudentGroup(groupName, groupYear, groupSpecialization))
+                myDatabaseHelper.addGroup(StudentGroup(groupName, groupYear, groupSpecialization))
             } catch (e : Exception) {
                 return@setPositiveButton
             } finally {

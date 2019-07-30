@@ -12,10 +12,11 @@
             android:layout_height="wrap_content"
             tools:layout_editor_absoluteY="110dp"
             tools:layout_editor_absoluteX="74dp"
-            android:id="@+id/input_login"
+
             android:textSize="30sp"
             android:textAlignment="center"/>
     <EditText
+            android:id="@+id/input_login"
             android:inputType="text"
             android:layout_width="255dp"/>
     <TextView
@@ -24,11 +25,12 @@
             android:layout_height="wrap_content"
             tools:layout_editor_absoluteY="110dp"
             tools:layout_editor_absoluteX="74dp"
-            android:id="@+id/input_password"
+
             android:textSize="30sp"
             android:textAlignment="center"/>
     <EditText
-            android:inputType="text"
+            android:id="@+id/input_password"
+            android:inputType="text|textPassword"
             android:layout_width="436dp"/>
     <TextView
             android:text="@string/new_name"
@@ -36,10 +38,11 @@
             android:layout_height="wrap_content"
             tools:layout_editor_absoluteY="110dp"
             tools:layout_editor_absoluteX="74dp"
-            android:id="@+id/input_name"
+
             android:textSize="30sp"
             android:textAlignment="center"/>
     <EditText
+            android:id="@+id/input_name"
             android:inputType="text"
             android:layout_width="436dp"/>
     <TextView
@@ -48,15 +51,16 @@
             android:layout_height="wrap_content"
             tools:layout_editor_absoluteY="110dp"
             tools:layout_editor_absoluteX="74dp"
-            android:id="@+id/input_group"
+
             android:textSize="30sp"
             android:textAlignment="center"/>
     <EditText
+            android:id="@+id/input_group"
             android:inputType="text"
             android:layout_width="436dp"/>
     <Button
             android:text="@string/register"
             android:textSize="24sp"
             android:id="@+id/register_button"
-            android:onClick="testFun"/>
+            android:onClick="registerUser"/>
 </TableLayout>

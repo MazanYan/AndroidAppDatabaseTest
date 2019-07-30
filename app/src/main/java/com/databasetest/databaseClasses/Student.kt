@@ -1,12 +1,14 @@
 package com.databasetest.databaseClasses
 
-data class Student(val id: String,
+data class Student(val login: String,
+              val group: String,
+              val password: String,
               val firstName: String,
               val secondName: String,
-              val fatherName: String,
-              val group: String,
-              val login: String,
-              val password: String) {
+              val fatherName: String) {
 
-
+    val fullName: String
+        get() {
+            return secondName + firstName + fatherName
+        }
 }

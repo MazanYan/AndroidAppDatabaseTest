@@ -15,8 +15,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val myDatabaseHandler = DBHelper(this)
-        myDatabaseHandler.clearTables()
+        val myDatabaseHelper = DBHelper(this)
+        myDatabaseHelper.clearTables()
 
 //        myDatabaseHandler.addGroup(StudentGroup("ІC-71", 2017, "yцуеп"))
 //        val groups = myDatabaseHandler.getAllStudentGroups()
