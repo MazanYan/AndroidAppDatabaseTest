@@ -4,7 +4,6 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import android.util.Log
 import com.databasetest.databaseClasses.PairLesson
 import com.databasetest.databaseClasses.Student
 import com.databasetest.databaseClasses.StudentGroup
@@ -26,12 +25,11 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
             );""",
 
             """CREATE TABLE Student (
-                BookID TEXT NOT NULL PRIMARY KEY,
+                Login TEXT NOT NULL PRIMARY KEY,
                 FirstName TEXT,
                 SecondName TEXT,
                 FatherName TEXT,
                 StudentGroup INTEGER,
-                Login TEXT,
                 Password TEXT,
 
                 FOREIGN KEY(StudentGroup) REFERENCES StudentGroup(Number)

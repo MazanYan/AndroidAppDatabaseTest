@@ -1,18 +1,14 @@
 package com.databasetest;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import com.databasetest.databaseClasses.StudentGroup;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.Assert;
+import org.junit.*;
 import org.junit.runner.RunWith;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.RuntimeEnvironment;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+
 
 @RunWith(RobolectricTestRunner.class)
 public class DatabaseTest {
@@ -29,6 +25,7 @@ public class DatabaseTest {
         databaseTest.close();
     }
 
+    @Ignore("This test will be ignored")
     @Test
     public void testDbInsertion() {
         StudentGroup testGroup = new StudentGroup("ІВ-71", 2019, "ErA");

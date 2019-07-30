@@ -8,21 +8,20 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/editText" android:hint="@string/set_group_name_label"/>
+            android:id="@+id/group_name_alert_dialog"
+            android:hint="@string/set_group_name_label"/>
     <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/editText2" android:hint="@string/specialisation_label"/>
+            android:id="@+id/group_specialization_alert_dialog"
+            android:hint="@string/specialisation_label"/>
     <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/editText3" android:hint="@string/year_label"/>
-    <Button
-            android:text="@string/create_group"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/button"/>
+            android:id="@+id/group_year_alert_dialog"
+            android:hint="@string/year_label"/>
 </LinearLayout>
